@@ -27,14 +27,18 @@ const sectionsData = [
       id modi accusantium ipsa eveniet accusamus. Tempora 
       quis corporis et nam.`
     }
-]
+];
+const open = ref(-1)
 </script>
 
 <template>
     <section v-for="({ label, texte }, key) of sectionsData" :key="key">
         <pre class="font-mono">key : {{ key }}</pre>
-        <pre class="font-mono">label : {{ label }}</pre>
-        <pre class="font-mono">texte : {{ texte }}</pre>
+
+        <button @click="open = key+1" class="font-mono">{{ label }}</button>
+
+
+        <p v-show="open === key+1" class="font-mono">{{ texte }}</p>
     </section>
 </template>
 
