@@ -18,16 +18,19 @@ onErrorCaptured((err, instance, info) => {
     menu
   </button>
   <header>
-    <nav v-show="menuIsOpen">
-      <ul>
-        <li>
-          <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/accordéon" class="text-red-500 underline"> Accordéon </RouterLink>
-        </li>
-      </ul>
-    </nav>
+    <Transition class="transition-transform duration-1000" enter-from-class="-translate-x-full"
+      enter-to-class="translate-x-0" leave-active-class="-translate-x-full">
+      <nav v-show="menuIsOpen">
+        <ul>
+          <li>
+            <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/accordéon" class="text-red-500 underline"> Accordéon </RouterLink>
+          </li>
+        </ul>
+      </nav>
+    </Transition>
   </header>
   <RouterView v-slot="{ Component }">
     <Suspense>
