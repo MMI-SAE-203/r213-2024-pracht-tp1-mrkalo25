@@ -28,6 +28,9 @@ onErrorCaptured((err, instance, info) => {
           <li>
             <RouterLink to="/accordéon" class="text-red-500 underline"> Accordéon </RouterLink>
           </li>
+          <li>
+            <RouterLink to="/boucle" class="text-red-500 underline"> Boucle </RouterLink>
+          </li>
         </ul>
       </nav>
     </Transition>
