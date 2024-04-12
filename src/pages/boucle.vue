@@ -28,7 +28,7 @@ const sectionsData = [
       quis corporis et nam.`
     }
 ];
-const open = ref(-1)
+const open = ref(0)
 </script>
 
 <template>
