@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onErrorCaptured } from 'vue'
+import { onErrorCaptured, vShow } from 'vue'
 import { RouterLink, RouterView } from 'vue-router/auto'
 import { ref } from 'vue'
 const menuIsOpen = ref(false)
+
 
 
 onErrorCaptured((err, instance, info) => {
@@ -16,7 +17,7 @@ onErrorCaptured((err, instance, info) => {
     menu
   </button>
   <header>
-    <nav>
+    <nav v-show="menuIsOpen">
       <ul>
         <li>
           <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
